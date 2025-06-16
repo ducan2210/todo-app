@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_app/screens/main/main_screen.dart';
 import 'package:todo_app/screens/oneboading/onboarding_screen.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(primarySwatch: Colors.blue),
-          home: const OnboardingScreen(),
+          home: MainScreen(),
         );
       },
     );
