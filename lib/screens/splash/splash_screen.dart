@@ -1,19 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/configs/app_color_config.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:todo_app/configs/app_color_config.dart';
+import 'package:todo_app/screens/oneboading/onboarding_screen.dart';
+import 'package:todo_app/screens/welcome/welcome_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
+  Future<void> _checkAppState(BuildContext context) async {
+    if (await _isOnboardingCompleted()) {
+      Future.delayed(Duration(seconds: 3), () {
+        if (!context.mounted) return;
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const WelcomeScreen();
+            },
+          ),
+        );
+      });
+    } else {
+      if (!context.mounted) return;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+      );
+    }
+  }
+
+  Future<bool> _isOnboardingCompleted() async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      final result = prefs.getBool('kOnboardingCompleted');
+      return result ?? false;
+    } catch (e) {
+      return false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    _checkAppState(context);
     return Scaffold(
       backgroundColor: AppColorConfig.backgroundColor,
-      body: SafeArea(child: _buidBody()),
+      body: SafeArea(child: _buildBody()),
     );
   }
 
-  Widget _buidBody() {
+  Widget _buildBody() {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
