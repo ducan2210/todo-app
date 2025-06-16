@@ -7,13 +7,13 @@ class OnboardingChildPage extends StatelessWidget {
   final OnboardingPagePosition onboardingPagePosition;
   final VoidCallback nextOnPressed;
   final VoidCallback? backOnPressed;
-  final VoidCallback? skipOnPressed;
+  final VoidCallback skipOnPressed;
   const OnboardingChildPage({
     super.key,
     required this.onboardingPagePosition,
     required this.nextOnPressed,
     this.backOnPressed,
-    this.skipOnPressed,
+    required this.skipOnPressed,
   });
 
   @override

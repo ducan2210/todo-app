@@ -14,6 +14,7 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      physics: NeverScrollableScrollPhysics(),
       controller: _pageController,
       children: [
         OnboardingChildPage(
