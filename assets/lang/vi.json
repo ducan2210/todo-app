@@ -1,4 +1,6 @@
 {
+    "huy": "Hủy",
+
     "chaoMungDenVoiUpTodo": "Chào mừng đến với UpTodo",
     "dangNhapDeTiepTuc": "Vui lòng đăng nhập vào tài khoản của bạn hoặc tạo tài khoản mới để tiếp tục",
     "dangNhap": "Đăng nhập",
@@ -6,5 +8,13 @@
     "boQua": "Bỏ qua",
     "quayLai": "Quay lại",
     "tiepTheo": "Tiếp theo",
-    "batDau": "Bắt đầu"
+    "batDau": "Bắt đầu",
+    
+    "taoDanhMucMoi": "Tạo danh mục mới",
+    "tenDanhMuc": "Tên danh mục",
+    "tenDanhMucPlaceholder": "Tên danh mục",
+    "bieuTuongDanhMuc": "Biểu tượng danh mục",
+    "mauDanhMuc": "Màu danh mục",
+    "taoDanhMuc": "Tạo danh mục",
+    "chonIcon": "Chọn biểu tượng từ thư viện"
 }
