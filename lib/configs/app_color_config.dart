@@ -9,4 +9,5 @@ class AppColorConfig {
   static const Color lightGray = Color(0xFFF5F5F5);
   static const Color white = Color(0xFFFFFFFF);
   static const Color accentColor = Color(0xFF8875FF);
+  static const Color darkGray = Color(0xFF363636);
 }

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo_app/screens/oneboading/onboarding_screen.dart';
+import 'package:todo_app/blocs/language/language_state.dart';
+import 'package:todo_app/constants/app_localizations.dart';
+import 'package:todo_app/screens/splash/splash_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'blocs/language/language_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,19 +14,33 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(primarySwatch: Colors.blue),
-          home: const OnboardingScreen(),
-        );
-      },
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (context) => LanguageBloc())],
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        builder: (context, child) {
+          return BlocBuilder<LanguageBloc, LanguageState>(
+            builder: (context, state) {
+              return MaterialApp(
+                locale: state.locale,
+                supportedLocales: const [Locale('en', ''), Locale('vi', '')],
+                localizationsDelegates: const [
+                  AppLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(primarySwatch: Colors.blue),
+                home: SplashScreen(),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
