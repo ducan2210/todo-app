@@ -63,7 +63,9 @@ class _OnboardingPageViewState extends State<OnboardingPageView> {
   void _goToWelcomeScreen() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+      MaterialPageRoute(
+        builder: (context) => const WelcomeScreen(isFirstTimeStartApp: true),
+      ),
     );
   }
 

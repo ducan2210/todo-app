@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const WelcomeScreen();
+              return const WelcomeScreen(isFirstTimeStartApp: false);
             },
           ),
         );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/configs/app_color_config.dart';
 import 'package:todo_app/utils/enums/onboarding_page_position_enum.dart';
+import 'package:todo_app/widgets/custom_text_widget.dart';
 
 class OnboardingChildPage extends StatelessWidget {
   final OnboardingPagePosition onboardingPagePosition;
@@ -44,13 +45,11 @@ class OnboardingChildPage extends StatelessWidget {
       alignment: AlignmentDirectional.centerStart,
       child: TextButton(
         onPressed: skipOnPressed,
-        child: Text(
-          "SKIP",
-          style: TextStyle(
-            fontSize: 16.sp,
-            color: AppColorConfig.gray,
-            fontFamily: 'Lato',
-          ),
+        child: CustomTextWidget(
+          text: "boQua",
+          isUpperCase: true,
+          fontSize: 16.sp,
+          color: AppColorConfig.gray,
         ),
       ),
     );
@@ -150,13 +149,11 @@ class OnboardingChildPage extends StatelessWidget {
             onPressed: () {
               backOnPressed?.call();
             },
-            child: Text(
-              "BACK",
-              style: TextStyle(
-                fontSize: 16.sp,
-                color: AppColorConfig.gray,
-                fontFamily: 'Lato',
-              ),
+            child: CustomTextWidget(
+              text: "quayLai",
+              fontSize: 16.sp,
+              isUpperCase: true,
+              color: AppColorConfig.gray,
             ),
           ),
           ElevatedButton(
@@ -170,15 +167,12 @@ class OnboardingChildPage extends StatelessWidget {
               ),
               padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 12.sp),
             ),
-            child: Text(
-              onboardingPagePosition == OnboardingPagePosition.page3
-                  ? "GET STARTED"
-                  : "NEXT",
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontFamily: 'Lato',
-                color: AppColorConfig.white,
-              ),
+            child: CustomTextWidget(
+              text: onboardingPagePosition == OnboardingPagePosition.page3
+                  ? "batDau"
+                  : "tiepTheo",
+              fontSize: 16.sp,
+              color: AppColorConfig.white,
             ),
           ),
         ],
