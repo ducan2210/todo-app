@@ -1,5 +1,10 @@
 {
     "huy": "Cancel",
+    "chon": "Select",
+    "dong": "Close",
+    "thanhCong": "Success",
+    "loi": "Validation error",
+    
 
     "chaoMungDenVoiUpTodo": "Welcome to UpTodo",
     "dangNhapDeTiepTuc": "Please login to your account or create new account to continue",
@@ -15,6 +20,12 @@
     "tenDanhMucPlaceholder": "Category name",
     "bieuTuongDanhMuc": "Category icon",
     "mauDanhMuc": "Category color",
+    "mauIcon": "Category icon color",
     "taoDanhMuc": "Create category",
-    "chonIcon": "Choose icon from library"
+    "chonIcon": "Choose icon from library",
+    "chonMau": "Choose color",
+    "xemTruoc": "Preview",
+    "taoDanhMucThanhCong": "Create category successfully",
+    "phaiDatTen": "You must set a name for the category",
+    "phaiChonIcon": "You must select an icon for the category"
 }
