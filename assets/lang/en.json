@@ -27,5 +27,11 @@
     "xemTruoc": "Preview",
     "taoDanhMucThanhCong": "Create category successfully",
     "phaiDatTen": "You must set a name for the category",
-    "phaiChonIcon": "You must select an icon for the category"
+    "phaiChonIcon": "You must select an icon for the category",
+
+    "themCongViec_form_name_label": "Add task",
+    "themCongViec_form_name_place": "Enter task name here",
+    "themCongViec_form_description_label": "Task description",
+    "themCongViec_form_description_place": "Enter task description here",
+    "tenCongViec": "Task name"
 }

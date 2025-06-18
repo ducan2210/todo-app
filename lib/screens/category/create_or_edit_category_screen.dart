@@ -11,16 +11,17 @@ import 'package:todo_app/constants/app_localizations.dart';
 import 'package:todo_app/entities/category_realm_entity.dart';
 import 'package:todo_app/widgets/custom_text_widget.dart';
 
-class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({super.key});
+class CreateOrEditCategoryScreen extends StatefulWidget {
+  const CreateOrEditCategoryScreen({super.key});
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<CreateOrEditCategoryScreen> createState() =>
+      _CreateOrEditCategoryScreenState();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
-  @override
+class _CreateOrEditCategoryScreenState
+    extends State<CreateOrEditCategoryScreen> {
   final _nameCategoryTextController = TextEditingController();
-  final List<Color> dataColor = [];
+  // final List<Color> dataColor = [];
   IconData? _selectedIcon;
   Color _backGroundColorSelected = AppColorConfig.white;
   Color _iconColorSelected = AppColorConfig.category8;
@@ -28,18 +29,18 @@ class _CategoryScreenState extends State<CategoryScreen> {
   void initState() {
     super.initState();
 
-    final storagePath = Configuration.defaultRealmPath;
-    print(storagePath);
-    dataColor.addAll([
-      AppColorConfig.category1,
-      AppColorConfig.category2,
-      AppColorConfig.category3,
-      AppColorConfig.category4,
-      AppColorConfig.category5,
-      AppColorConfig.category6,
-      AppColorConfig.category7,
-      AppColorConfig.category8,
-    ]);
+    // final storagePath = Configuration.defaultRealmPath;
+    // print(storagePath);
+    // dataColor.addAll([
+    //   AppColorConfig.category1,
+    //   AppColorConfig.category2,
+    //   AppColorConfig.category3,
+    //   AppColorConfig.category4,
+    //   AppColorConfig.category5,
+    //   AppColorConfig.category6,
+    //   AppColorConfig.category7,
+    //   AppColorConfig.category8,
+    // ]);
   }
 
   @override
@@ -170,7 +171,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               width: 36.sp,
               margin: EdgeInsets.only(right: 8.sp),
               decoration: BoxDecoration(
-                color: _backGroundColorSelected ?? AppColorConfig.white,
+                color: _backGroundColorSelected,
                 borderRadius: BorderRadius.circular(36.sp),
               ),
             ),
@@ -198,7 +199,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
               width: 36.sp,
               margin: EdgeInsets.only(right: 8.sp),
               decoration: BoxDecoration(
-                color: _iconColorSelected ?? AppColorConfig.white,
+                color: _iconColorSelected,
                 borderRadius: BorderRadius.circular(36.sp),
               ),
             ),

@@ -25,6 +25,13 @@
     "chonMau": "Chọn màu",
     "xemTruoc": "Preview",
     "phaiDatTen": "Bạn phải đặt tên cho danh mục",
-    "phaiChonIcon": "Bạn phải chọn biểu tượng cho danh mục"
+    "phaiChonIcon": "Bạn phải chọn biểu tượng cho danh mục",
+
+    "themCongViec_form_name_label": "Thêm công việc",
+    "themCongViec_form_name_place": "Nhập tên công việc ở đây",
+    "themCongViec_form_description_label": "Mô tả công việc",
+    "themCongViec_form_description_place": "Nhập mô tả công việc ở đây",
+
+    "tenCongViec": "Tên công việc"
 
 }
