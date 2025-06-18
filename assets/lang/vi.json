@@ -1,4 +1,10 @@
 {
+    "huy": "Hủy",
+    "chon": "Chọn",
+    "dong": "Đóng",
+    "thanhCong": "Thành công",
+    "loi": "Lỗi xác thực",
+
     "chaoMungDenVoiUpTodo": "Chào mừng đến với UpTodo",
     "dangNhapDeTiepTuc": "Vui lòng đăng nhập vào tài khoản của bạn hoặc tạo tài khoản mới để tiếp tục",
     "dangNhap": "Đăng nhập",
@@ -6,5 +12,26 @@
     "boQua": "Bỏ qua",
     "quayLai": "Quay lại",
     "tiepTheo": "Tiếp theo",
-    "batDau": "Bắt đầu"
+    "batDau": "Bắt đầu",
+    
+    "taoDanhMucMoi": "Tạo danh mục mới",
+    "tenDanhMuc": "Tên danh mục",
+    "tenDanhMucPlaceholder": "Tên danh mục",
+    "bieuTuongDanhMuc": "Biểu tượng danh mục",
+    "mauDanhMuc": "Màu danh mục",
+    "mauIcon": "Màu biểu tượng",
+    "taoDanhMuc": "Tạo danh mục",
+    "chonIcon": "Chọn biểu tượng từ thư viện",
+    "chonMau": "Chọn màu",
+    "xemTruoc": "Preview",
+    "phaiDatTen": "Bạn phải đặt tên cho danh mục",
+    "phaiChonIcon": "Bạn phải chọn biểu tượng cho danh mục",
+
+    "themCongViec_form_name_label": "Thêm công việc",
+    "themCongViec_form_name_place": "Nhập tên công việc ở đây",
+    "themCongViec_form_description_label": "Mô tả công việc",
+    "themCongViec_form_description_place": "Nhập mô tả công việc ở đây",
+
+    "tenCongViec": "Tên công việc"
+
 }

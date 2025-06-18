@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/configs/app_color_config.dart';
+import 'package:todo_app/screens/task/create_task_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -40,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
         child: IconButton(
           icon: Icon(Icons.add, size: 30.sp, color: AppColorConfig.white),
           onPressed: () {
-            // Handle the button press
+            _onShowCreateTask();
           },
         ),
       ),
@@ -131,6 +132,19 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  void _onShowCreateTask() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (context) {
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: CreateTaskScreen(),
+        );
+      },
     );
   }
 }

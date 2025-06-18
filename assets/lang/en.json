@@ -1,4 +1,11 @@
 {
+    "huy": "Cancel",
+    "chon": "Select",
+    "dong": "Close",
+    "thanhCong": "Success",
+    "loi": "Validation error",
+    
+
     "chaoMungDenVoiUpTodo": "Welcome to UpTodo",
     "dangNhapDeTiepTuc": "Please login to your account or create new account to continue",
     "dangNhap": "Login",
@@ -6,5 +13,25 @@
     "boQua": "Skip",
     "quayLai": "Back",
     "tiepTheo": "Next",
-    "batDau":"Get Started"
+    "batDau":"Get Started",
+
+    "taoDanhMucMoi": "Create new category",
+    "tenDanhMuc": "Category name",
+    "tenDanhMucPlaceholder": "Category name",
+    "bieuTuongDanhMuc": "Category icon",
+    "mauDanhMuc": "Category color",
+    "mauIcon": "Category icon color",
+    "taoDanhMuc": "Create category",
+    "chonIcon": "Choose icon from library",
+    "chonMau": "Choose color",
+    "xemTruoc": "Preview",
+    "taoDanhMucThanhCong": "Create category successfully",
+    "phaiDatTen": "You must set a name for the category",
+    "phaiChonIcon": "You must select an icon for the category",
+
+    "themCongViec_form_name_label": "Add task",
+    "themCongViec_form_name_place": "Enter task name here",
+    "themCongViec_form_description_label": "Task description",
+    "themCongViec_form_description_place": "Enter task description here",
+    "tenCongViec": "Task name"
 }
