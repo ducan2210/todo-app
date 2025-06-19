@@ -9,6 +9,7 @@
     "huySua": "Hủy chỉnh sửa",
     "xacNhan": "Xác nhận",
     "luu": "Lưu",
+    "hoac": "Hoặc",
 
     "chaoMungDenVoiUpTodo": "Chào mừng đến với UpTodo",
     "dangNhapDeTiepTuc": "Vui lòng đăng nhập vào tài khoản của bạn hoặc tạo tài khoản mới để tiếp tục",
@@ -47,5 +48,21 @@
     "thoiGianCongViec": "Thời gian công việc",
 
     "chinhSuaUuTienCongViec": "Chỉnh sửa ưu tiên công việc",
-    "doUuTien": "Độ ưu tiên"
+    "doUuTien": "Độ ưu tiên",
+
+    "tenNguoiDung": "Tên người dùng",
+    "nhapTenNguoiDung": "Nhập tên người dùng của bạn",
+    "matKhau": "Mật khẩu",
+    "nhapMatKhau": "Nhập mật khẩu của bạn",
+    "dangNhapBangGG": "Đăng nhập bằng Google",
+    "dangNhapBangApple": "Đăng nhập bằng Apple",
+    "dangKyBangGG": "Đăng ký bằng Google",
+    "dangKyBangApple": "Đăng ký bằng Apple",
+    "chuaCoTaiKhoan": "Bạn chưa có tài khoản?",
+    "daCoTaiKhoan": "Bạn đã có tài khoản?",
+    "dangKy": "Đăng ký",
+    "xacNhanMatKhau": "Xác nhận mật khẩu",
+    "nhapLaiMatKhau": "Nhập lại mật khẩu"
+    
+
 }
