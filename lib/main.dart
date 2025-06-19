@@ -4,7 +4,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/blocs/language/language_state.dart';
 import 'package:todo_app/constants/app_localizations.dart';
-import 'package:todo_app/screens/category/create_or_edit_category_screen.dart';
 import 'package:todo_app/screens/main/main_screen.dart';
 
 import 'blocs/language/language_bloc.dart';

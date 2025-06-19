@@ -9,6 +9,7 @@ class AppColorConfig {
   static const Color lightGray = Color(0xFFF5F5F5);
   static const Color white = Color(0xFFFFFFFF);
   static const Color accentColor = Color(0xFF8875FF);
+  static const Color categoryBackgroundColor = Color(0xFF272727);
   static const Color darkGray = Color(0xFF363636);
   static const Color category1 = Color(0xFFC9CC41);
   static const Color category2 = Color(0xFF66CC41);

@@ -4,6 +4,11 @@
     "dong": "Đóng",
     "thanhCong": "Thành công",
     "loi": "Lỗi xác thực",
+    "taoMoi": "Tạo mới",
+    "sua": "Sửa",
+    "huySua": "Hủy chỉnh sửa",
+    "xacNhan": "Xác nhận",
+    "luu": "Lưu",
 
     "chaoMungDenVoiUpTodo": "Chào mừng đến với UpTodo",
     "dangNhapDeTiepTuc": "Vui lòng đăng nhập vào tài khoản của bạn hoặc tạo tài khoản mới để tiếp tục",
@@ -26,12 +31,21 @@
     "xemTruoc": "Preview",
     "phaiDatTen": "Bạn phải đặt tên cho danh mục",
     "phaiChonIcon": "Bạn phải chọn biểu tượng cho danh mục",
+    "chonDanhMuc": "Chọn danh mục",
+    "themDanhMuc": "Thêm danh mục",
+    "chinhSuaDanhMuc": "Chỉnh sửa danh mục",
+    "suaDanhMucThanhCong": "Chỉnh sửa danh mục thành công",
+
+
 
     "themCongViec_form_name_label": "Thêm công việc",
     "themCongViec_form_name_place": "Nhập tên công việc ở đây",
     "themCongViec_form_description_label": "Mô tả công việc",
     "themCongViec_form_description_place": "Nhập mô tả công việc ở đây",
+    "tenCongViec": "Tên công việc",
+    "loaiCongViec": "Loại công việc",
+    "thoiGianCongViec": "Thời gian công việc",
 
-    "tenCongViec": "Tên công việc"
-
+    "chinhSuaUuTienCongViec": "Chỉnh sửa ưu tiên công việc",
+    "doUuTien": "Độ ưu tiên"
 }
