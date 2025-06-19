@@ -4,6 +4,12 @@
     "dong": "Close",
     "thanhCong": "Success",
     "loi": "Validation error",
+    "taoMoi": "Create new",
+    "sua": "Edit",
+    "huySua": "Cancel edit",
+    "xacNhan": "Confirm",
+    "luu": "Save",
+    "hoac": "Or",
     
 
     "chaoMungDenVoiUpTodo": "Welcome to UpTodo",
@@ -14,6 +20,7 @@
     "quayLai": "Back",
     "tiepTheo": "Next",
     "batDau":"Get Started",
+
 
     "taoDanhMucMoi": "Create new category",
     "tenDanhMuc": "Category name",
@@ -28,10 +35,34 @@
     "taoDanhMucThanhCong": "Create category successfully",
     "phaiDatTen": "You must set a name for the category",
     "phaiChonIcon": "You must select an icon for the category",
+    "chonDanhMuc": "Choose a Category",
+    "themDanhMuc": "Add category",
+    "chinhSuaDanhMuc": "Edit category",
+    "suaDanhMucThanhCong": "Edit category successfully",
 
     "themCongViec_form_name_label": "Add task",
     "themCongViec_form_name_place": "Enter task name here",
     "themCongViec_form_description_label": "Task description",
     "themCongViec_form_description_place": "Enter task description here",
-    "tenCongViec": "Task name"
+    "tenCongViec": "Task name",
+    "loaiCongViec": "Task category",
+    "thoiGianCongViec": "Task time",
+
+    "chinhSuaUuTienCongViec": "Edit task priority",
+    "doUuTien": "Priority level",
+
+    "tenNguoiDung": "Username",
+    "nhapTenNguoiDung": "Enter your username",
+    "matKhau": "Password",
+    "nhapMatKhau": "Enter your password",
+    "dangNhapBangGG": "Login with Google",
+    "dangNhapBangApple": "Login with Apple",
+    "dangKyBangGG": "Register with Google",
+    "dangKyBangApple": "Register with Apple",
+    "chuaCoTaiKhoan": "Don't have an account?",
+    "daCoTaiKhoan": "Already have an account?",
+    "dangKy": "Register",
+    "xacNhanMatKhau": "Confirm Password",
+    "nhapLaiMatKhau": "Confirm your password"
+
 }

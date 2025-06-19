@@ -1,5 +1,4 @@
 import 'package:color_hex/color_hex.dart';
-import 'package:color_hex/extensions/extension_colortohex.dart';
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/Models/configuration.dart';
@@ -12,7 +11,8 @@ import 'package:todo_app/entities/category_realm_entity.dart';
 import 'package:todo_app/widgets/custom_text_widget.dart';
 
 class CreateOrEditCategoryScreen extends StatefulWidget {
-  const CreateOrEditCategoryScreen({super.key});
+  final String? categoryId;
+  const CreateOrEditCategoryScreen({super.key, this.categoryId});
   @override
   State<CreateOrEditCategoryScreen> createState() =>
       _CreateOrEditCategoryScreenState();
@@ -21,26 +21,21 @@ class CreateOrEditCategoryScreen extends StatefulWidget {
 class _CreateOrEditCategoryScreenState
     extends State<CreateOrEditCategoryScreen> {
   final _nameCategoryTextController = TextEditingController();
-  // final List<Color> dataColor = [];
   IconData? _selectedIcon;
   Color _backGroundColorSelected = AppColorConfig.white;
   Color _iconColorSelected = AppColorConfig.category8;
+  bool get _isEdit {
+    return widget.categoryId != null;
+  }
+
   @override
   void initState() {
     super.initState();
-
-    // final storagePath = Configuration.defaultRealmPath;
-    // print(storagePath);
-    // dataColor.addAll([
-    //   AppColorConfig.category1,
-    //   AppColorConfig.category2,
-    //   AppColorConfig.category3,
-    //   AppColorConfig.category4,
-    //   AppColorConfig.category5,
-    //   AppColorConfig.category6,
-    //   AppColorConfig.category7,
-    //   AppColorConfig.category8,
-    // ]);
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      if (_isEdit) {
+        _findCategoryById(widget.categoryId!);
+      }
+    });
   }
 
   @override
@@ -52,7 +47,7 @@ class _CreateOrEditCategoryScreenState
         title: Align(
           alignment: Alignment.centerLeft,
           child: CustomTextWidget(
-            text: "taoDanhMucMoi",
+            text: _isEdit ? "chinhSuaDanhMuc" : "taoDanhMucMoi",
             fontSize: 20.sp,
             fontWeight: FontWeight.bold,
           ),
@@ -234,7 +229,7 @@ class _CreateOrEditCategoryScreenState
           ),
           ElevatedButton(
             onPressed: () {
-              _onHandleCreateCategory();
+              _isEdit ? _onHandleEditCategory() : _onHandleCreateCategory();
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColorConfig.accentColor,
@@ -244,7 +239,7 @@ class _CreateOrEditCategoryScreenState
               padding: EdgeInsets.symmetric(horizontal: 24.sp, vertical: 12.sp),
             ),
             child: CustomTextWidget(
-              text: "taoDanhMuc",
+              text: _isEdit ? "xacNhan" : "taoDanhMuc",
               isUpperCase: true,
               fontSize: 16.sp,
               color: AppColorConfig.white,
@@ -399,16 +394,15 @@ class _CreateOrEditCategoryScreenState
     await realm.writeAsync(() {
       realm.add(category);
     });
+    await _showAlert("thanhCong", "taoDanhMucThanhCong");
 
-    _nameCategoryTextController.text = "";
-    _selectedIcon = null;
-    _backGroundColorSelected = AppColorConfig.white;
-    _iconColorSelected = AppColorConfig.backgroundColor;
-    _showAlert("thanhCong", "taoDanhMucThanhCong");
+    if (mounted) {
+      Navigator.pop(context, true);
+    }
   }
 
-  void _showAlert(String title, String message) {
-    showDialog(
+  Future<void> _showAlert(String title, String message) async {
+    await showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
@@ -442,5 +436,66 @@ class _CreateOrEditCategoryScreenState
         );
       },
     );
+  }
+
+  void _findCategoryById(String id) {
+    final config = Configuration.local([CategoryRealmEntity.schema]);
+    final realm = Realm(config);
+    final category = realm.find<CategoryRealmEntity>(
+      ObjectId.fromHexString(id),
+    );
+    if (category == null) {
+      return;
+    }
+    _nameCategoryTextController.text = category.name;
+    if (category.iconCodePoint != null) {
+      _selectedIcon = IconData(
+        category.iconCodePoint!,
+        fontFamily: 'MaterialIcons',
+      );
+    }
+    if (category.backgroundColorHex != null) {
+      _backGroundColorSelected = category.backgroundColorHex!.convertToColor;
+    }
+    if (category.iconColorHex != null) {
+      _iconColorSelected = category.iconColorHex!.convertToColor;
+    }
+    setState(() {});
+  }
+
+  void _onHandleEditCategory() async {
+    final nameCategory = _nameCategoryTextController.text.trim();
+    if (nameCategory.isEmpty) {
+      _showAlert("loi", "phaiDatTen");
+      return;
+    }
+    if (_selectedIcon == null) {
+      _showAlert("loi", "phaiChonIcon");
+      return;
+    }
+    final config = Configuration.local([CategoryRealmEntity.schema]);
+    final realm = Realm(config);
+    final category = realm.find<CategoryRealmEntity>(
+      ObjectId.fromHexString(widget.categoryId!),
+    );
+    if (category == null) {
+      return;
+    }
+
+    await realm.writeAsync(() {
+      category.name = nameCategory;
+      category.iconCodePoint = _selectedIcon?.codePoint;
+      category.backgroundColorHex = _backGroundColorSelected.convertToHex.hex;
+      category.iconColorHex = _iconColorSelected.convertToHex.hex;
+    });
+
+    _nameCategoryTextController.text = "";
+    _selectedIcon = null;
+    _backGroundColorSelected = AppColorConfig.white;
+    _iconColorSelected = AppColorConfig.backgroundColor;
+    await _showAlert("thanhCong", "suaDanhMucThanhCong");
+    if (mounted) {
+      Navigator.pop(context);
+    }
   }
 }
